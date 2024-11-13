@@ -1,0 +1,379 @@
+[
+    {
+        "author": "J.K. Rowling",
+        "title": "Harry Potter and the Sorcerer's Stone",
+        "description": "The first book in the Harry Potter series, where Harry discovers he's a wizard and attends the magical Hogwarts School of Witchcraft and Wizardry.",
+        "price": 19.99,
+        "ratings": 4.9,
+        "reviews": 125000,
+        "downloads": 5000000,
+        "pages": 309,
+        "genres": [
+            "Fantasy",
+            "Adventure"
+        ],
+        "language": "English",
+        "published": "1997-06-26",
+        "image": "https://m.media-amazon.com/images/I/91NjWLufnNL._AC_UF1000,1000_QL80_.jpg",
+        "coverImage": "https://m.media-amazon.com/images/I/91NjWLufnNL._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+        "author": "George Orwell",
+        "title": "1984",
+        "description": "A dystopian novel that explores the dangers of totalitarianism, surveillance, and the loss of individual freedoms.",
+        "price": 14.99,
+        "ratings": 4.7,
+        "reviews": 98000,
+        "downloads": 3000000,
+        "pages": 328,
+        "genres": [
+            "Dystopian",
+            "Political Fiction"
+        ],
+        "language": "English",
+        "published": "1949-06-08",
+        "image": "https://m.media-amazon.com/images/I/715WdnBHqYL._UF1000,1000_QL80_.jpg",
+        "coverImage": "https://m.media-amazon.com/images/I/715WdnBHqYL._UF1000,1000_QL80_.jpg"
+    },
+    {
+        "author": "J.R.R. Tolkien",
+        "title": "The Hobbit",
+        "description": "A fantasy novel about Bilbo Baggins, a hobbit who embarks on an unexpected adventure with a group of dwarves to reclaim a lost kingdom.",
+        "price": 12.99,
+        "ratings": 4.8,
+        "reviews": 85000,
+        "downloads": 4000000,
+        "pages": 310,
+        "genres": [
+            "Fantasy",
+            "Adventure"
+        ],
+        "language": "English",
+        "published": "1937-09-21",
+        "image": "https://m.media-amazon.com/images/M/MV5BMzU0NDY0NDEzNV5BMl5BanBnXkFtZTgwOTIxNDU1MDE@._V1_FMjpg_UX1000_.jpg",
+        "coverImage": "https://m.media-amazon.com/images/M/MV5BMzU0NDY0NDEzNV5BMl5BanBnXkFtZTgwOTIxNDU1MDE@._V1_FMjpg_UX1000_.jpg"
+    },
+    {
+        "author": "Jane Austen",
+        "title": "Pride and Prejudice",
+        "description": "A classic novel that deals with issues of social class, marriage, and individual agency through the story of Elizabeth Bennet and Mr. Darcy.",
+        "price": 9.99,
+        "ratings": 4.5,
+        "reviews": 65000,
+        "downloads": 2000000,
+        "pages": 279,
+        "genres": [
+            "Romance",
+            "Classic"
+        ],
+        "language": "English",
+        "published": "1813-01-28",
+        "image": "https://m.media-amazon.com/images/I/81mTGi9gs-L._AC_UF1000,1000_QL80_.jpg",
+        "coverImage": "https://m.media-amazon.com/images/I/81mTGi9gs-L._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+        "author": "Harper Lee",
+        "title": "To Kill a Mockingbird",
+        "description": "A gripping novel about racism, injustice, and morality, seen through the eyes of Scout Finch in the 1930s South.",
+        "price": 15.99,
+        "ratings": 4.9,
+        "reviews": 120000,
+        "downloads": 4500000,
+        "pages": 324,
+        "genres": [
+            "Fiction",
+            "Classic"
+        ],
+        "language": "English",
+        "published": "1960-07-11",
+        "image": "https://m.media-amazon.com/images/I/811NqsxadrS._AC_UF1000,1000_QL80_.jpg",
+        "coverImage": "https://m.media-amazon.com/images/I/811NqsxadrS._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+        "author": "Markus Zusak",
+        "title": "The Book Thief",
+        "description": "A story set in Nazi Germany, narrated by Death, about a young girl named Liesel who finds solace in stealing books and sharing them with others.",
+        "price": 13.99,
+        "ratings": 4.8,
+        "reviews": 75000,
+        "downloads": 2800000,
+        "pages": 552,
+        "genres": [
+            "Historical Fiction",
+            "War"
+        ],
+        "language": "English",
+        "published": "2005-03-14",
+        "image": "https://m.media-amazon.com/images/I/91JGwQlnu7L.jpg",
+        "coverImage": "https://m.media-amazon.com/images/I/91JGwQlnu7L.jpg"
+    },
+    {
+        "author": "F. Scott Fitzgerald",
+        "title": "The Great Gatsby",
+        "description": "A story about the excesses of the Jazz Age and the tragic obsession of Jay Gatsby with Daisy Buchanan.",
+        "price": 10.99,
+        "ratings": 4.4,
+        "reviews": 105000,
+        "downloads": 3000000,
+        "pages": 180,
+        "genres": [
+            "Classic",
+            "Fiction"
+        ],
+        "language": "English",
+        "published": "1925-04-10",
+        "image": "https://m.media-amazon.com/images/I/81n682DOVAL._AC_UF1000,1000_QL80_.jpg",
+        "coverImage": "https://m.media-amazon.com/images/I/81n682DOVAL._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+        "author": "Stephen King",
+        "title": "It",
+        "description": "A horror novel about a group of children who battle an evil entity that resurfaces every 27 years.",
+        "price": 19.99,
+        "ratings": 4.8,
+        "reviews": 130000,
+        "downloads": 6000000,
+        "pages": 1138,
+        "genres": [
+            "Horror",
+            "Thriller"
+        ],
+        "language": "English",
+        "published": "1986-09-15",
+        "image": "https://m.media-amazon.com/images/M/MV5BZDFhODExOTctNTFkZS00NjE1LWE2MWMtY2Q1ZThhMGY5NjJkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        "coverImage": "https://m.media-amazon.com/images/M/MV5BZDFhODExOTctNTFkZS00NjE1LWE2MWMtY2Q1ZThhMGY5NjJkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+    },
+    {
+        "author": "J.K. Rowling",
+        "title": "Harry Potter and the Chamber of Secrets",
+        "description": "The second book in the Harry Potter series, where Harry and his friends uncover dark secrets about Hogwarts.",
+        "price": 19.99,
+        "ratings": 4.9,
+        "reviews": 140000,
+        "downloads": 5200000,
+        "pages": 341,
+        "genres": [
+            "Fantasy",
+            "Adventure"
+        ],
+        "language": "English",
+        "published": "1998-07-02",
+        "image": "https://m.media-amazon.com/images/I/818umIdoruL._AC_UF1000,1000_QL80_.jpg",
+        "coverImage": "https://m.media-amazon.com/images/I/818umIdoruL._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+        "author": "J.R.R. Tolkien",
+        "title": "The Lord of the Rings: The Fellowship of the Ring",
+        "description": "The first book in the Lord of the Rings trilogy, where a group of heroes embark on a quest to destroy a powerful ring.",
+        "price": 18.99,
+        "ratings": 4.9,
+        "reviews": 150000,
+        "downloads": 7000000,
+        "pages": 423,
+        "genres": [
+            "Fantasy",
+            "Adventure"
+        ],
+        "language": "English",
+        "published": "1954-07-29",
+        "image": "https://m.media-amazon.com/images/I/61yfrZ2fQ1L._AC_UF1000,1000_QL80_.jpg",
+        "coverImage": "https://m.media-amazon.com/images/I/61yfrZ2fQ1L._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+        "author": "Agatha Christie",
+        "title": "Murder on the Orient Express",
+        "description": "A detective mystery in which Hercule Poirot solves a murder on the luxurious Orient Express train.",
+        "price": 14.99,
+        "ratings": 4.7,
+        "reviews": 120000,
+        "downloads": 4500000,
+        "pages": 256,
+        "genres": [
+            "Mystery",
+            "Crime"
+        ],
+        "language": "English",
+        "published": "1934-01-01",
+        "image": "https://m.media-amazon.com/images/I/81tlk1inIhL._AC_UF1000,1000_QL80_.jpg",
+        "coverImage": "https://m.media-amazon.com/images/I/81tlk1inIhL._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+        "author": "Daphne du Maurier",
+        "title": "Rebecca",
+        "description": "A gothic novel about a young bride who is overshadowed by her husband's first wife, Rebecca, whose presence haunts their mansion.",
+        "price": 12.99,
+        "ratings": 4.5,
+        "reviews": 80000,
+        "downloads": 3500000,
+        "pages": 395,
+        "genres": [
+            "Gothic",
+            "Romance"
+        ],
+        "language": "English",
+        "published": "1938-04-12",
+        "image": "https://m.media-amazon.com/images/I/51IT5sY6iwL._AC_UF1000,1000_QL80_.jpg",
+        "coverImage": "https://m.media-amazon.com/images/I/51IT5sY6iwL._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+        "author": "H.G. Wells",
+        "title": "The Time Machine",
+        "description": "A classic science fiction novel in which a time traveler journeys into the distant future.",
+        "price": 8.99,
+        "ratings": 4.3,
+        "reviews": 60000,
+        "downloads": 2000000,
+        "pages": 128,
+        "genres": [
+            "Science Fiction",
+            "Adventure"
+        ],
+        "language": "English",
+        "published": "1895-05-07",
+        "image": "https://m.media-amazon.com/images/I/81BWWw8+sCL._AC_UF1000,1000_QL80_.jpg",
+        "coverImage": "https://m.media-amazon.com/images/I/81BWWw8+sCL._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+        "author": "F. Scott Fitzgerald",
+        "title": "Tender Is the Night",
+        "description": "A novel about the complexities of love, wealth, and morality in 1920s Europe.",
+        "price": 13.99,
+        "ratings": 4.1,
+        "reviews": 40000,
+        "downloads": 1500000,
+        "pages": 318,
+        "genres": [
+            "Literary Fiction"
+        ],
+        "language": "English",
+        "published": "1934-04-12",
+        "image": "https://m.media-amazon.com/images/I/81j3ECeg0QL._AC_UF1000,1000_QL80_.jpg",
+        "coverImage": "https://m.media-amazon.com/images/I/81j3ECeg0QL._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+        "author": "Mark Twain",
+        "title": "Adventures of Huckleberry Finn",
+        "description": "The classic story of a young boy and his adventures along the Mississippi River.",
+        "price": 7.99,
+        "ratings": 4.6,
+        "reviews": 95000,
+        "downloads": 6000000,
+        "pages": 366,
+        "genres": [
+            "Classic",
+            "Adventure"
+        ],
+        "language": "English",
+        "published": "1884-12-10",
+        "image": "https://m.media-amazon.com/images/I/71tNxn0TpiL._AC_UF1000,1000_QL80_.jpg",
+        "coverImage": "https://m.media-amazon.com/images/I/71tNxn0TpiL._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+        "author": "Leo Tolstoy",
+        "title": "War and Peace",
+        "description": "A historical novel set during the Napoleonic Wars that chronicles the lives of several aristocratic families in Russia.",
+        "price": 22.99,
+        "ratings": 4.5,
+        "reviews": 120000,
+        "downloads": 4000000,
+        "pages": 1225,
+        "genres": [
+            "Historical Fiction",
+            "Classic"
+        ],
+        "language": "English",
+        "published": "1869-01-01",
+        "image": "https://m.media-amazon.com/images/I/71wXZB-VtBL._AC_UF1000,1000_QL80_.jpg",
+        "coverImage": "https://m.media-amazon.com/images/I/71wXZB-VtBL._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+        "author": "Mary Shelley",
+        "title": "Frankenstein",
+        "description": "A gothic novel about the creation of a living being by a scientist, whose ambition leads to tragic consequences.",
+        "price": 10.99,
+        "ratings": 4.7,
+        "reviews": 95000,
+        "downloads": 3500000,
+        "pages": 280,
+        "genres": [
+            "Horror",
+            "Gothic"
+        ],
+        "language": "English",
+        "published": "1818-01-01",
+        "image": "https://m.media-amazon.com/images/I/81FzMSO3XnL._UF1000,1000_QL80_.jpg",
+        "coverImage": "https://m.media-amazon.com/images/I/81FzMSO3XnL._UF1000,1000_QL80_.jpg"
+    },
+    {
+        "author": "Harper Lee",
+        "title": "Go Set a Watchman",
+        "description": "The controversial sequel to To Kill a Mockingbird, set in the 1950s, with Scout returning to Maycomb.",
+        "price": 16.99,
+        "ratings": 3.9,
+        "reviews": 50000,
+        "downloads": 1500000,
+        "pages": 288,
+        "genres": [
+            "Fiction",
+            "Historical Fiction"
+        ],
+        "language": "English",
+        "published": "2015-07-14",
+        "image": "https://m.media-amazon.com/images/I/71rek7hYQlL.jpg",
+        "coverImage": "https://m.media-amazon.com/images/I/71rek7hYQlL.jpg"
+    },
+    {
+        "author": "J.D. Salinger",
+        "title": "The Catcher in the Rye",
+        "description": "A novel about the experiences of a troubled teen named Holden Caulfield in New York City.",
+        "price": 13.99,
+        "ratings": 4.2,
+        "reviews": 110000,
+        "downloads": 4000000,
+        "pages": 277,
+        "genres": [
+            "Literary Fiction",
+            "Coming-of-Age"
+        ],
+        "language": "English",
+        "published": "1951-07-16",
+        "image": "https://m.media-amazon.com/images/I/7108sdEUEGL.jpg",
+        "coverImage": "https://m.media-amazon.com/images/I/7108sdEUEGL.jpg"
+    },
+    {
+        "author": "Khaled Hosseini",
+        "title": "The Kite Runner",
+        "description": "A powerful story of friendship, betrayal, and redemption set against the backdrop of Afghanistan's turbulent history.",
+        "price": 14.99,
+        "ratings": 4.8,
+        "reviews": 200000,
+        "downloads": 10000000,
+        "pages": 371,
+        "genres": [
+            "Historical Fiction",
+            "Drama"
+        ],
+        "language": "English",
+        "published": "2003-05-29",
+        "image": "https://m.media-amazon.com/images/I/81IzbD2IiIL._AC_UF1000,1000_QL80_.jpg",
+        "coverImage": "https://m.media-amazon.com/images/I/81IzbD2IiIL._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+        "author": "John Green",
+        "title": "The Fault in Our Stars",
+        "description": "A touching love story between two teens who are battling cancer, set in Indianapolis and Amsterdam.",
+        "price": 12.99,
+        "ratings": 4.6,
+        "reviews": 250000,
+        "downloads": 7000000,
+        "pages": 313,
+        "genres": [
+            "Young Adult",
+            "Romance"
+        ],
+        "language": "English",
+        "published": "2012-01-10",
+        "image": "https://m.media-amazon.com/images/I/41RDgCHpGTL._SY445_SX342_.jpg",
+        "coverImage": "https://m.media-amazon.com/images/I/41RDgCHpGTL._SY445_SX342_.jpg"
+    }
+]

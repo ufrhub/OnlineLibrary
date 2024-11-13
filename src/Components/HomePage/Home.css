@@ -1,0 +1,21 @@
+.home {
+    height: auto;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.books-container {
+    height: auto;
+    width: 90%;
+    margin: 1% auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1%;
+}
+
+@media (max-width: 500px) {
+    .books-container {
+        width: 95%;
+    }
+}
