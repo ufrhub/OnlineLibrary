@@ -33,16 +33,17 @@ header>nav {
     gap: 27px;
 }
 
-header>nav>div {
+header>nav>a {
     color: var(--white);
     cursor: pointer;
     border: 1px solid var(--white);
     padding: 10px 20px;
     border-radius: 10px;
+    text-decoration: none;
     transition: all 0.3s ease;
 }
 
-header>nav>div:hover {
+header>nav>a:hover {
     color: var(--white);
     background: radial-gradient(circle, var(--green-66), var(--green-transparent));
     border-color: var(--green);
