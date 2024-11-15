@@ -1,0 +1,157 @@
+.add-book {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    height: auto;
+    width: 95vw;
+    max-width: 700px;
+    background-color: var(--light-pastel-blue);
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: -0.2px;
+    font-size: 16px;
+    padding-bottom: 40px;
+    margin: 40px 0;
+    border-radius: 40px;
+}
+
+.add-book p,
+.add-book input,
+.add-book select,
+.add-book textarea,
+.add-book button {
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: -0.2px;
+    font-size: 16px;
+}
+
+.add-book div,
+.add-book p {
+    color: var(--soft-bluish-gray);
+    text-shadow: 1px 1px 1px var(--white);
+}
+
+.add-book form {
+    padding: 16px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.add-book .segment {
+    padding: 32px 0;
+    text-align: center;
+}
+
+.add-book button,
+.add-book input,
+.add-book textarea {
+    border: 0;
+    outline: 0;
+    font-size: 16px;
+    border-radius: 320px;
+    padding: 16px;
+    background-color: var(--light-pastel-blue);
+    text-shadow: 1px 1px 0 var(--white);
+}
+
+.add-book label {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 24px;
+    width: 100%;
+    color: var(--black);
+}
+
+.add-book label>span {
+    margin-left: 10px;
+    color: var(--gray);
+}
+
+.add-book input {
+    margin-right: 8px;
+    box-shadow: inset 2px 2px 5px var(--soft-bluish-gray), inset -5px -5px 10px var(--white);
+    height: fit-content;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.add-book textarea {
+    margin-right: 8px;
+    box-shadow: inset 2px 2px 5px var(--soft-bluish-gray), inset -5px -5px 10px var(--white);
+    height: 200px;
+    min-height: 200px;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    border-radius: 40px !important;
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.add-book input:focus,
+.add-book textarea:focus {
+    box-shadow: inset 1px 1px 2px var(--soft-bluish-gray), inset -1px -1px 2px var(--white);
+}
+
+.add-book button {
+    color: #61677C;
+    font-weight: bold;
+    box-shadow: -5px -5px 20px var(--white), 5px 5px 20px var(--soft-bluish-gray);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.add-book button:hover {
+    box-shadow: -2px -2px 5px var(--white), 2px 2px 5px var(--soft-bluish-gray);
+}
+
+.add-book button:active {
+    box-shadow: inset 1px 1px 2px var(--soft-bluish-gray), inset -1px -1px 2px var(--white);
+}
+
+.add-book button .icon {
+    margin-right: 8px;
+}
+
+.add-book button.unit {
+    border-radius: 8px;
+    line-height: 0;
+    width: 48px;
+    height: 48px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 8px;
+    font-size: 19.2px;
+}
+
+.add-book button.unit .icon {
+    margin-right: 0;
+}
+
+.add-book button.submit-btn {
+    display: block;
+    width: 100%;
+    color: var(--deep-green);
+}
+
+.add-book button .faSave {
+    margin-right: 5px;
+}
+
+.add-book .input-group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.add-book .input-group label {
+    margin: 0;
+    flex: 1;
+}
