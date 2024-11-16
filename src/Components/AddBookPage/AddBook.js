@@ -3,6 +3,7 @@ import "./AddBook.css";
 import MainHeader from "../../HelperComponents/Header/MainHeader";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSave } from "@fortawesome/free-regular-svg-icons";
+import { Buffer } from "buffer";
 
 const AddBook = () => {
     const [book, setBook] = useState({
@@ -26,9 +27,28 @@ const AddBook = () => {
         setBook({ ...book, [name]: value });
     };
 
-    const handleFileChange = (e) => {
-        const { name, files } = e.target;
-        setBook({ ...book, [name]: files[0] });
+    const handleFileChange = (event) => {
+        const { name, files } = event.target;
+        const file = files[0];
+
+        if (file) {
+            const reader = new FileReader();
+
+            // Event handler for when the file is read successfully
+            reader.onload = (e) => {
+                const arrayBuffer = e.target.result; // ArrayBuffer of the file
+                const buffer = Buffer.from(arrayBuffer); // Convert to Node.js Buffer
+                const fileData = {
+                    file,
+                    buffer
+                }
+
+                setBook({ ...book, [name]: fileData });
+            };
+
+            // Read the file as an ArrayBuffer
+            reader.readAsArrayBuffer(file);
+        }
     };
 
     const handleSubmit = (e) => {
@@ -40,8 +60,10 @@ const AddBook = () => {
             genres: book.genres.split(',').map((genre) => genre.trim()),
         };
 
+        console.log(formattedBook);
+
         // Save the book object to localStorage
-        localStorage.setItem('bookData', JSON.stringify(formattedBook));
+        // localStorage.setItem('bookData', JSON.stringify(formattedBook));
         alert('Book details saved to localStorage!');
     };
 
@@ -191,7 +213,7 @@ const AddBook = () => {
                         />
                     </label>
 
-                    <button type="submit" className="submit-btn"><FontAwesomeIcon icon={faSave} bounce className="faSave"/> Save Book</button>
+                    <button type="submit" className="submit-btn"><FontAwesomeIcon icon={faSave} bounce className="faSave" /> Save Book</button>
                 </form>
             </div>
         </React.Fragment>
