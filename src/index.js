@@ -4,18 +4,25 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import { Persistor, Store } from "./Redux/Store";
+import { PersistGate } from "redux-persist/integration/react";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter
-      future={{
-        v7_startTransition: true, // Opt into startTransition behavior
-        v7_relativeSplatPath: true // Opt into the relative splat path resolution
-      }}
-    >
-      <App />
-    </BrowserRouter>
+    <Provider store={Store}>
+      <PersistGate loading={null} persistor={Persistor}>
+        <BrowserRouter
+          future={{
+            v7_startTransition: true, // Opt into startTransition behavior
+            v7_relativeSplatPath: true // Opt into the relative splat path resolution
+          }}
+        >
+          <App />
+        </BrowserRouter>
+      </PersistGate>
+    </Provider>
   </React.StrictMode>
 );
 

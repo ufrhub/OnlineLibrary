@@ -4,23 +4,28 @@ import MainHeader from "../../HelperComponents/Header/MainHeader";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSave } from "@fortawesome/free-regular-svg-icons";
 import { Buffer } from "buffer";
+import { useDispatch } from "react-redux";
+import { AddNewBook, UpdateBook, DeleteBook } from "../../Redux/Actions/BookActions";
 
 const AddBook = () => {
     const [book, setBook] = useState({
-        author: '',
-        title: '',
-        description: '',
-        price: '',
-        ratings: '',
-        reviews: '',
-        downloads: '',
-        pages: '',
-        genres: '',
-        language: '',
+        author: 'Umar',
+        title: 'MyBook',
+        description: 'No description',
+        price: '500',
+        ratings: '500',
+        reviews: '500',
+        downloads: '500',
+        pages: '500',
+        genres: 'Action',
+        language: 'English',
         published: '',
         image: null,
-        coverImage: null
+        coverImage: null,
+        book: null
     });
+
+    const Dispatch = useDispatch();
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -37,18 +42,25 @@ const AddBook = () => {
             // Event handler for when the file is read successfully
             reader.onload = (e) => {
                 const arrayBuffer = e.target.result; // ArrayBuffer of the file
-                const buffer = Buffer.from(arrayBuffer); // Convert to Node.js Buffer
-                const fileData = {
-                    file,
+                const buffer = Buffer.from(arrayBuffer).toString('base64'); // Convert to Node.js Buffer
+                const fileData = JSON.stringify({
+                    lastModified: file.lastModified,
+                    lastModifiedDate: file.lastModifiedDate,
+                    name: file.name,
+                    size: file.size,
+                    type: file.type,
                     buffer
-                }
-
+                });
                 setBook({ ...book, [name]: fileData });
             };
 
             // Read the file as an ArrayBuffer
             reader.readAsArrayBuffer(file);
         }
+    };
+
+    const handleSaveFile = (Data) => {
+
     };
 
     const handleSubmit = (e) => {
@@ -61,9 +73,7 @@ const AddBook = () => {
         };
 
         console.log(formattedBook);
-
-        // Save the book object to localStorage
-        // localStorage.setItem('bookData', JSON.stringify(formattedBook));
+        Dispatch(AddNewBook(formattedBook));
         alert('Book details saved to localStorage!');
     };
 
@@ -209,6 +219,16 @@ const AddBook = () => {
                             name="coverImage"
                             accept="image/*"
                             placeholder="Cover Image"
+                            onChange={handleFileChange}
+                        />
+                    </label>
+
+                    <label>
+                        <span>Book (PDF file):</span>
+                        <input type="file"
+                            name="book"
+                            accept="application/pdf"
+                            placeholder="Book (PDF file)"
                             onChange={handleFileChange}
                         />
                     </label>

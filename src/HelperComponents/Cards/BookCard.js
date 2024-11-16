@@ -2,7 +2,6 @@ import React from "react";
 import "./Card.css";
 
 const BookCard = ({ Book }) => {
-    console.log(Book)
     return (
         <div className="book-card">
             <img src={Book.image} alt="Book" />
