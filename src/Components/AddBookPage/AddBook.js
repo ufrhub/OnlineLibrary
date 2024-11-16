@@ -5,20 +5,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSave } from "@fortawesome/free-regular-svg-icons";
 import { Buffer } from "buffer";
 import { useDispatch } from "react-redux";
-import { AddNewBook, UpdateBook, DeleteBook } from "../../Redux/Actions/BookActions";
+import { AddNewBook } from "../../Redux/Actions/BookActions";
 
 const AddBook = () => {
     const [book, setBook] = useState({
-        author: 'Umar',
-        title: 'MyBook',
-        description: 'No description',
-        price: '500',
-        ratings: '500',
-        reviews: '500',
-        downloads: '500',
-        pages: '500',
-        genres: 'Action',
-        language: 'English',
+        author: '',
+        title: '',
+        description: '',
+        price: '',
+        ratings: '',
+        reviews: '',
+        downloads: '',
+        pages: '',
+        genres: '',
+        language: '',
         published: '',
         image: null,
         coverImage: null,

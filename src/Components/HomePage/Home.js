@@ -5,6 +5,7 @@ import BookCard from "../../HelperComponents/Cards/BookCard";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { Buffer } from "buffer";
+import MainLoader from "../../HelperComponents/Loader/MainLoader";
 
 const Home = () => {
     const BooksState = useSelector((state) => state.BookReducers);
@@ -81,7 +82,7 @@ const Home = () => {
                 const UniqueBooks = Array.from(new Map(CombinedBooks.map((book) => [book.title, book])).values());
                 return UniqueBooks;
             });
-            console.log(UpdatedBooks);
+
             setIsLoading(false);
         }
     }, [BooksState]);
@@ -102,17 +103,13 @@ const Home = () => {
         FetchBooks();
     }, []);
 
-    useEffect(() => {
-        console.log(Books);
-    }, [Books]);
-
     return (
         <React.Fragment>
             <MainHeader />
 
             {
                 isLoading ?
-                    <></>
+                    <MainLoader />
                     :
                     <div className="home">
                         <div className="books-container">
