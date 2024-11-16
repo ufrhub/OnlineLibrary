@@ -59,10 +59,6 @@ const AddBook = () => {
         }
     };
 
-    const handleSaveFile = (Data) => {
-
-    };
-
     const handleSubmit = (e) => {
         e.preventDefault();
 
