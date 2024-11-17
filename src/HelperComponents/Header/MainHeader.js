@@ -11,11 +11,11 @@ const MainHeader = () => {
             </Link>
 
             <nav>
-                <Link to={"/browseBooks"}>
+                <Link to={"/browse-books"}>
                     Browse Books
                 </Link>
 
-                <Link to={"/addBook"}>
+                <Link to={"/add-book"}>
                     Add Book
                 </Link>
             </nav>

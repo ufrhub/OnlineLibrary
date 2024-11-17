@@ -36,6 +36,7 @@ const BookDetails = () => {
             <button className="back-btn" type="button" onClick={HandleOnBackPress}>
                 <img src={BackButton} alt="BackButton" />
             </button>
+            
             {
                 isLoading ?
                     <MainLoader />
