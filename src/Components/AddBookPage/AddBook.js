@@ -6,9 +6,11 @@ import { faSave } from "@fortawesome/free-regular-svg-icons";
 import { Buffer } from "buffer";
 import { useDispatch } from "react-redux";
 import { AddNewBook } from "../../Redux/Actions/BookActions";
+import { useNavigate } from "react-router-dom";
 
 const AddBook = () => {
     const [book, setBook] = useState({
+        id: Date.now(),
         author: '',
         title: '',
         description: '',
@@ -26,6 +28,7 @@ const AddBook = () => {
     });
 
     const Dispatch = useDispatch();
+    const Navigate = useNavigate();
 
     const HandleInputChange = (e) => {
         const { name, value } = e.target;
@@ -68,8 +71,15 @@ const AddBook = () => {
             genres: book.genres.split(',').map((genre) => genre.trim()),
         };
 
-        Dispatch(AddNewBook(FormattedBook));
+        try {
+            Dispatch(AddNewBook(FormattedBook));
+        } catch (error) {
+            console.error(error.message);
+            alert(error.message);
+        }
+
         alert('Book details saved to localStorage!');
+        Navigate("/");
     };
 
     return (

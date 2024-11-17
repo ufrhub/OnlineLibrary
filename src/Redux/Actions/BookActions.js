@@ -17,6 +17,6 @@ export const UpdateBook = (Payload) => {
 export const DeleteBook = (Payload) => {
     return {
         type: DELETE_BOOK,
-        payload: Payload.title
+        payload: Payload.id
     }
 }

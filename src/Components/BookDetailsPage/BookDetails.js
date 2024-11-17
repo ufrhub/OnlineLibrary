@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import "./BookDetails.css";
 import MainHeader from "../../HelperComponents/Header/MainHeader";
 import { useNavigate, useParams } from "react-router-dom";
-import { useFetchBookByTitle } from "../../CustomHooks/UseFetchBooksData";
+import { useFetchBookByID } from "../../CustomHooks/UseFetchBooksData";
 import MainLoader from "../../HelperComponents/Loader/MainLoader";
 import BackButton from "../../Assets/back-button.svg";
 
 const BookDetails = () => {
     const Params = useParams();
-    const { BookData, Error } = useFetchBookByTitle(Params.title);
+    const { BookData, Error } = useFetchBookByID(Params.id);
     const [Book, setBook] = useState();
     const [isLoading, setIsLoading] = useState(true);
 
@@ -16,11 +16,10 @@ const BookDetails = () => {
 
     useEffect(() => {
         if (Error) {
-            console.log(Error);
+            console.error(Error);
         }
 
         if (BookData) {
-            console.log("Books Data:", BookData);
             setBook(BookData);
             setIsLoading(false);
         }

@@ -30,7 +30,7 @@ export const useFetchBooksData = () => {
 
                 const CombinedBooks = Array.from(
                     new Map(
-                        [...BooksFromRedux, ...BooksFromApi].map((Book) => [Book.title, Book])
+                        [...BooksFromRedux, ...BooksFromApi].map((Book) => [Book.id, Book])
                     ).values()
                 );
 
@@ -46,7 +46,7 @@ export const useFetchBooksData = () => {
     return { BooksData, Error };
 };
 
-export const useFetchBookByTitle = (BookTitle) => {
+export const useFetchBookByID = (BookID) => {
     const BooksState = useSelector((state) => state.BookReducers);
     const [BookData, setBookData] = useState();
     const [Error, setError] = useState(null);
@@ -74,11 +74,11 @@ export const useFetchBookByTitle = (BookTitle) => {
 
                 const CombinedBooks = Array.from(
                     new Map(
-                        [...BooksFromRedux, ...BooksFromApi].map((Book) => [Book.title, Book])
+                        [...BooksFromRedux, ...BooksFromApi].map((Book) => [Book.id, Book])
                     ).values()
                 );
 
-                const FindBook = CombinedBooks.find((Book) => Book.title === BookTitle);
+                const FindBook = CombinedBooks.find((Book) => String(Book.id) === String(BookID));
 
                 setBookData(FindBook);
             } catch (error) {
@@ -87,7 +87,7 @@ export const useFetchBookByTitle = (BookTitle) => {
         };
 
         FetchBooks();
-    }, [BookTitle, FetchBooksFromRedux]);
+    }, [BookID, FetchBooksFromRedux]);
 
     return { BookData, Error };
 }

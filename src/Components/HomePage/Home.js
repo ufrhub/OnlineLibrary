@@ -14,11 +14,10 @@ const Home = () => {
     // Render the content
     useEffect(() => {
         if (Error) {
-            console.log(Error);
+            console.error(Error);
         }
-        
+
         if (BooksData.length > 0) {
-            console.log("Books Data:", BooksData);
             setBooks(BooksData);
             setIsLoading(false);
         }

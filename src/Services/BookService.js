@@ -3,7 +3,7 @@ import { ExtractFileData, ConvertBufferIntoBase64 } from "../Utilities/FileUtili
 
 export const FetchBooksFromApi = async () => {
     try {
-        const Response = await Axios.get("https://dummyjson.com/c/9dda-8aac-4f2b-aef8");
+        const Response = await Axios.get("https://dummyjson.com/c/7e67-3846-442d-b225");
         return Response.data || [];
     } catch (error) {
         throw new Error(error.message || "Error fetching books from API");

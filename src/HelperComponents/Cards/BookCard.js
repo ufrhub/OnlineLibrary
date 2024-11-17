@@ -6,7 +6,7 @@ const BookCard = ({ Book }) => {
     const Navigate = useNavigate();
 
     const HandleNavigate = () => {
-        Navigate(`/book-details/${Book.title}`);
+        Navigate(`/book-details/${Book.id}`);
     }
 
     return (
