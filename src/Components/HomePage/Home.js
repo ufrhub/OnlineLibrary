@@ -7,7 +7,7 @@ import { useFetchBooksData } from "../../CustomHooks/UseFetchBooksData";
 
 const Home = () => {
     const [Books, setBooks] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
 
     const { BooksData, Error } = useFetchBooksData();
 

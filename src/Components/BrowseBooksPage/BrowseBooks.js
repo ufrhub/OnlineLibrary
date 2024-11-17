@@ -9,7 +9,7 @@ import BackButton from "../../Assets/back-button.svg";
 
 const BrowseBooks = () => {
     const [Books, setBooks] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
 
     const { BooksData, Error } = useFetchBooksData();
 
@@ -39,11 +39,19 @@ const BrowseBooks = () => {
                 <img src={BackButton} alt="BackButton" />
             </button>
 
+            <search className="search-section">
+
+            </search>
+
             {
                 isLoading ?
                     <MainLoader />
                     :
                     <div className="browse-books">
+                        <section className="filter-section">
+
+                        </section>
+
                         <div className="books-container">
                             {
                                 Books.map((Book, Index) => {
