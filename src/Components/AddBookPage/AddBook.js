@@ -27,19 +27,19 @@ const AddBook = () => {
 
     const Dispatch = useDispatch();
 
-    const handleInputChange = (e) => {
+    const HandleInputChange = (e) => {
         const { name, value } = e.target;
         setBook({ ...book, [name]: value });
     };
 
-    const handleFileChange = (event) => {
+    const HandleFileChange = (event) => {
         const { name, files } = event.target;
         const file = files[0];
 
         if (file) {
             const reader = new FileReader();
 
-            // Event handler for when the file is read successfully
+            // Event Handler for when the file is read successfully
             reader.onload = (e) => {
                 const arrayBuffer = e.target.result; // ArrayBuffer of the file
                 const buffer = Buffer.from(arrayBuffer).toString('base64'); // Convert to Node.js Buffer
@@ -59,17 +59,16 @@ const AddBook = () => {
         }
     };
 
-    const handleSubmit = (e) => {
+    const HandleSubmit = (e) => {
         e.preventDefault();
 
         // Convert genres from string to an array
-        const formattedBook = {
+        const FormattedBook = {
             ...book,
             genres: book.genres.split(',').map((genre) => genre.trim()),
         };
 
-        console.log(formattedBook);
-        Dispatch(AddNewBook(formattedBook));
+        Dispatch(AddNewBook(FormattedBook));
         alert('Book details saved to localStorage!');
     };
 
@@ -78,7 +77,7 @@ const AddBook = () => {
             <MainHeader />
 
             <div className="add-book">
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={HandleSubmit}>
                     <div className="segment">
                         <h1>Add Book Details</h1>
                     </div>
@@ -89,7 +88,7 @@ const AddBook = () => {
                             name="author"
                             value={book.author}
                             placeholder="Author"
-                            onChange={handleInputChange}
+                            onChange={HandleInputChange}
                             required
                         />
                     </label>
@@ -100,7 +99,7 @@ const AddBook = () => {
                             name="title"
                             value={book.title}
                             placeholder="Title"
-                            onChange={handleInputChange}
+                            onChange={HandleInputChange}
                             required
                         />
                     </label>
@@ -111,7 +110,7 @@ const AddBook = () => {
                             name="description"
                             value={book.description}
                             placeholder="Description"
-                            onChange={handleInputChange}
+                            onChange={HandleInputChange}
                         />
                     </label>
 
@@ -121,7 +120,7 @@ const AddBook = () => {
                             name="price"
                             value={book.price}
                             placeholder="Price"
-                            onChange={handleInputChange}
+                            onChange={HandleInputChange}
                             required
                         />
                     </label>
@@ -132,7 +131,7 @@ const AddBook = () => {
                             name="ratings"
                             value={book.ratings}
                             placeholder="Ratings"
-                            onChange={handleInputChange}
+                            onChange={HandleInputChange}
                         />
                     </label>
 
@@ -142,7 +141,7 @@ const AddBook = () => {
                             name="reviews"
                             value={book.reviews}
                             placeholder="Reviews"
-                            onChange={handleInputChange}
+                            onChange={HandleInputChange}
                         />
                     </label>
 
@@ -152,7 +151,7 @@ const AddBook = () => {
                             name="downloads"
                             value={book.downloads}
                             placeholder="Downloads"
-                            onChange={handleInputChange}
+                            onChange={HandleInputChange}
                         />
                     </label>
 
@@ -162,7 +161,7 @@ const AddBook = () => {
                             name="pages"
                             value={book.pages}
                             placeholder="Pages"
-                            onChange={handleInputChange}
+                            onChange={HandleInputChange}
                         />
                     </label>
 
@@ -172,7 +171,7 @@ const AddBook = () => {
                             name="genres"
                             value={book.genres}
                             placeholder="Genres"
-                            onChange={handleInputChange}
+                            onChange={HandleInputChange}
                         />
                     </label>
 
@@ -182,7 +181,7 @@ const AddBook = () => {
                             name="language"
                             value={book.language}
                             placeholder="Language"
-                            onChange={handleInputChange}
+                            onChange={HandleInputChange}
                             required
                         />
                     </label>
@@ -193,7 +192,7 @@ const AddBook = () => {
                             name="published"
                             value={book.published}
                             placeholder="Published Date"
-                            onChange={handleInputChange}
+                            onChange={HandleInputChange}
                             required
                         />
                     </label>
@@ -204,7 +203,7 @@ const AddBook = () => {
                             name="image"
                             accept="image/*"
                             placeholder="Image"
-                            onChange={handleFileChange}
+                            onChange={HandleFileChange}
                             required
                         />
                     </label>
@@ -215,7 +214,7 @@ const AddBook = () => {
                             name="coverImage"
                             accept="image/*"
                             placeholder="Cover Image"
-                            onChange={handleFileChange}
+                            onChange={HandleFileChange}
                         />
                     </label>
 
@@ -225,7 +224,7 @@ const AddBook = () => {
                             name="book"
                             accept="application/pdf"
                             placeholder="Book (PDF file)"
-                            onChange={handleFileChange}
+                            onChange={HandleFileChange}
                         />
                     </label>
 
