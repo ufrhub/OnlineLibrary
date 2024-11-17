@@ -1,0 +1,60 @@
+.browse-books {
+    height: 87vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.browse-books .top {
+    width: 95%;
+    display: flex;
+    gap: 5%;
+    margin: 0 auto 20px;
+}
+
+.browse-books .form {
+    background: var(--light-pastel-blue);
+    display: flex;
+    border-radius: 40px;
+}
+
+.browse-books .bottom {
+    position: absolute;
+    height: 75.7%;
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+}
+
+.browse-books .bottom .filter-section {
+    display: block;
+    height: 100%;
+    width: 25%;
+    background: var(--light-pastel-blue);
+    border-radius: 40px;
+}
+
+.browse-books .filter-section .segment {
+    margin-top: -40px;
+    margin-bottom: -20px;
+}
+
+.browse-books .books-container {
+    height: 100%;
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 1%;
+    overflow: auto;
+}
+
+@media (max-width: 700px) {
+    .browse-books .bottom .filter-section {
+        display: none;
+    }
+
+    .browse-books .books-container {
+        width: 95%;
+    }
+}
