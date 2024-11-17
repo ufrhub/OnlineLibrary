@@ -7,6 +7,7 @@ import { Buffer } from "buffer";
 import { useDispatch } from "react-redux";
 import { AddNewBook } from "../../Redux/Actions/BookActions";
 import { useNavigate } from "react-router-dom";
+import BackButton from "../../Assets/back-button.svg";
 
 const AddBook = () => {
     const [book, setBook] = useState({
@@ -82,9 +83,17 @@ const AddBook = () => {
         Navigate("/");
     };
 
+    const HandleOnBackPress = () => {
+        Navigate(-1);
+    }
+
     return (
         <React.Fragment>
             <MainHeader />
+
+            <button className="back-btn" type="button" onClick={HandleOnBackPress}>
+                <img src={BackButton} alt="BackButton" />
+            </button>
 
             <div className="add-book">
                 <form onSubmit={HandleSubmit}>
