@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import "./BrowseBooks.css";
 import MainHeader from "../../HelperComponents/Header/MainHeader";
 import MainLoader from "../../HelperComponents/Loader/MainLoader";
@@ -16,7 +16,12 @@ const BrowseBooks = () => {
     const [SearchInput, setSearchInput] = useState("");
     const [Category, setCategory] = useState("");
 
-    const { FilteredBooks, Error } = useFilterBooks({ searchInput: SearchInput, category: Category });
+    const FilterProperties = useMemo(() => ({
+        searchInput: SearchInput,
+        category: Category
+    }), [SearchInput, Category]);
+
+    const { FilteredBooks, Error } = useFilterBooks(FilterProperties);
 
     useEffect(() => {
         if (Error) {
@@ -88,7 +93,6 @@ const BrowseBooks = () => {
                                 </button>
                             </form>
                         </div>
-
 
                         <div className="bottom">
                             <section className="filter-section">
