@@ -15,14 +15,14 @@ const Home = () => {
     useEffect(() => {
         if (Error) {
             console.error(Error);
+            setIsLoading(false);
             return;
         }
 
         if (BooksData.length > 0) {
             setBooks(BooksData);
+            setIsLoading(false);
         }
-
-        setIsLoading(false);
     }, [BooksData, Error]);
 
     return (

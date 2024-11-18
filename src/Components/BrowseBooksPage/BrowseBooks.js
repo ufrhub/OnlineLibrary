@@ -25,16 +25,17 @@ const BrowseBooks = () => {
     useEffect(() => {
         if (Error) {
             console.error(Error);
+            setIsLoading(false);
             return;
         }
 
         if (FilteredBooks && FilteredBooks.length > 0) {
             setBooks(FilteredBooks);
+            setIsLoading(false);
         } else {
             setBooks([]);
+            setIsLoading(false);
         }
-
-        setIsLoading(false);
     }, [FilteredBooks, Error]);
 
     const HandleSearch = () => {

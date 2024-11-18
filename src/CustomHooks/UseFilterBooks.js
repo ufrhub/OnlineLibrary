@@ -39,8 +39,8 @@ export const useFilterBooks = (Properties) => {
                 } else {
                     const FilterBooks = CombinedBooks.filter((Book) => {
                         return (
-                            Book.title.toLowerCase() === Properties.searchInput.toLowerCase() ||
-                            Book.author.toLowerCase() === Properties.searchInput.toLowerCase() ||
+                            Book.title.toLowerCase().includes(Properties.searchInput.toLowerCase()) ||
+                            Book.author.toLowerCase().includes(Properties.searchInput.toLowerCase()) ||
                             Book.genres.some((genre) => genre.toLowerCase() === Properties.category.toLowerCase())
                         );
                     });
