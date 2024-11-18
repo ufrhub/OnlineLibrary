@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# Book Library Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+This project is a simple web-based book library application built using React. It allows users to browse, view, and add books to a library. The app includes functionality for filtering books by category, searching for books by title or author, viewing detailed book information, and adding new books to the library with proper validation.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+### 1. **Home Page**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- A landing page with a welcome message.
+- A list of book categories (e.g., Fiction, Non-Fiction, Sci-Fi, etc.).
+- Display a list of popular books with links to view more details.
+- A navigation bar with links to "Home", "Browse Books", and "Add Book".
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 2. **Browse Books Page**
 
-### `npm test`
+- Display a list of books filtered by category.
+- Dynamic routing to filter books by category (e.g., `/books/:category`).
+- Each book has a "View Details" link that navigates to the Book Details page.
+- A search bar to filter books by title or author.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 3. **Book Details Page**
 
-### `npm run build`
+- A dynamic route that displays detailed information about a selected book.
+- Displays the book’s title, author, description, and rating.
+- A "Back to Browse" button or link to return to the Browse Books page.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 4. **Add Book Page**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- A form to add a new book to the library.
+- Uses Redux to manage the state of the books list.
+- After submission, redirects to the Browse Books page with the newly added book displayed.
+- Implements form validation to ensure all fields are correctly filled out.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 5. **404 Page**
 
-### `npm run eject`
+- A "Page Not Found" route for any undefined routes.
+- Includes a link back to the Home page.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Requirements
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **React** (>= 18.3.1)
+- **Redux** (>= 5.0.1)
+- **React Router** (>= 6.28.0)
+- **Axios** (>= 1.7.7)
+- **Redux DevTools Extension** (>= 3.3.0)
+- **Redux Toolkit** (>= 2.3.0)
+- **React Redux** (>= 9.1.2)
+- **React Scripts** (>= 5.0.1)
+- **Redux Logger** (>= 3.0.6)
+- **Redux Persist** (>= 6.0.0)
+- **Redux Thunk** (>= 3.1.0)
+- **Font Awesome** (>= 6.6.0)
+- **Testing Libraries**:
+  - **@testing-library/jest-dom** (>= 5.17.0)
+  - **@testing-library/react** (>= 13.4.0)
+  - **@testing-library/user-event** (>= 13.5.0)
+- **Web Vitals** (>= 2.1.4)
+- **Buffer** (>= 6.0.3)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Installation
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+To run the project locally, follow these steps:
 
-## Learn More
+### 1. Clone the Repository
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Clone the repository to your local machine using Git. Open your terminal and run:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+git clone https://github.com/ufrhub/OnlineLibrary.git
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
