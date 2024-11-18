@@ -55,9 +55,15 @@ const BookDetails = () => {
                                             {
                                                 Book?.genres.length > 0
                                                     ?
-                                                    Book.genres.map((genre, index) => (
-                                                        <span key={index}>{genre} {Book?.genres.length !== index + 1 ? "," : ""}</span>
-                                                    ))
+                                                    Book.genres.map((genre, index) => {
+                                                        return (
+                                                            <span
+                                                                key={index}
+                                                            >
+                                                                {genre} {Book?.genres.length !== index + 1 ? "," : ""}
+                                                            </span>
+                                                        )
+                                                    })
                                                     :
                                                     <></>
                                             }

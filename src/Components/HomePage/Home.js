@@ -27,25 +27,26 @@ const Home = () => {
 
     return (
         <React.Fragment>
-            <MainHeader />
-
             {
                 isLoading ?
                     <MainLoader />
                     :
-                    <div className="home">
-                        <div className="books-container">
-                            {
-                                Books.map((Book, Index) => {
-                                    return (
-                                        <BookCard key={Index} Book={Book} />
-                                    )
-                                })
-                            }
-                        </div>
-                    </div>
-            }
+                    <>
+                        <MainHeader />
 
+                        <div className="home">
+                            <div className="books-container">
+                                {
+                                    Books.map((Book, Index) => {
+                                        return (
+                                            <BookCard key={Index} Book={Book} />
+                                        )
+                                    })
+                                }
+                            </div>
+                        </div>
+                    </>
+            }
         </React.Fragment>
     );
 };

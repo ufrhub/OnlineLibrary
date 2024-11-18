@@ -38,11 +38,16 @@ export const useFilterBooks = (Properties) => {
                     setFilteredBooks(CombinedBooks);
                 } else {
                     const FilterBooks = CombinedBooks.filter((Book) => {
-                        return (
-                            Book.title.toLowerCase().includes(Properties.searchInput.toLowerCase()) ||
-                            Book.author.toLowerCase().includes(Properties.searchInput.toLowerCase()) ||
-                            Book.genres.some((genre) => genre.toLowerCase() === Properties.category.toLowerCase())
-                        );
+                        const MatchesSearch = Properties.searchInput
+                            ? Book.title.toLowerCase().includes(Properties.searchInput.toLowerCase()) ||
+                            Book.author.toLowerCase().includes(Properties.searchInput.toLowerCase())
+                            : true;
+
+                        const MatchesCategory = Properties.category && Properties.category.toLowerCase() !== ""
+                            ? Book.genres.some((genre) => genre.toLowerCase() === Properties.category.toLowerCase())
+                            : true;
+
+                        return MatchesSearch && MatchesCategory;
                     });
 
                     setFilteredBooks(FilterBooks);

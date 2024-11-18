@@ -40,13 +40,19 @@ const BrowseBooks = () => {
 
     const HandleSearch = () => {
         if (SearchInput !== UpdateSearchInput) {
-            setSearchInput(UpdateSearchInput); // Only update if the input has changed
+            setSearchInput(UpdateSearchInput);
         }
+    }
+
+    const HandleCategoryChange = (Event) => {
+        const { value } = Event.target;
+
+        setCategory(value);
     }
 
     const Categories = [
         "All", "Adventure", "Autobiography", "Biography", "Business and Economics",
-        "Children's Fiction", "Cookbooks", "Crime Fiction", "Drama", "Dystopian",
+        "Children's Fiction", "Classic", "Cookbooks", "Crime Fiction", "Drama", "Dystopian",
         "Epistolary", "Fable", "Fairy Tale", "Fantasy", "Graphic Novels", "Health and Wellness",
         "Historical Fiction", "History", "Horror", "Magical Realism", "Memoir",
         "Mystery", "Philosophy", "Poetry", "Politics", "Programming", "Religion and Spirituality",
@@ -94,11 +100,20 @@ const BrowseBooks = () => {
 
                                     <label>
                                         <span>Select Category:</span>
-                                        <select onChange={(e) => setCategory(e.target.value)}>
+                                        <select
+                                            onChange={HandleCategoryChange}
+                                        >
                                             {
-                                                Categories.map((category, index) => (
-                                                    <option key={index} value={category !== "All" ? category : ""}>{category}</option>
-                                                ))
+                                                Categories.map((category, index) => {
+                                                    return (
+                                                        <option
+                                                            key={index}
+                                                            value={category !== "All" ? category : ""}
+                                                        >
+                                                            {category}
+                                                        </option>
+                                                    )
+                                                })
                                             }
                                         </select>
                                     </label>
