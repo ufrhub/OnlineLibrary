@@ -12,12 +12,25 @@
   --soft-bluish-gray: #BABECC;
   --red: #950d0d;
   --dark-red: #BB3D3D;
+  --button: #b3b3b3;
+  --button-color: #0a0a0a;
+  --shadow: #000;
+  --bg: #737373;
+  --header: #7a7a7a;
+  --color: #fafafa;
+  --lit-header: #e6e6e6;
+
+  --speed: 2s;
+}
+
+* {
+  box-sizing: border-box;
+  transform-style: preserve-3d;
 }
 
 body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   background: var(--charcoal);
   overflow-x: hidden;
   overflow-y: auto;

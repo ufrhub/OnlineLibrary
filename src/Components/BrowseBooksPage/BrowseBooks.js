@@ -3,8 +3,7 @@ import "./BrowseBooks.css";
 import MainHeader from "../../HelperComponents/Header/MainHeader";
 import MainLoader from "../../HelperComponents/Loader/MainLoader";
 import BookCard from "../../HelperComponents/Cards/BookCard";
-import { useNavigate } from "react-router-dom";
-import BackButton from "../../Assets/back-button.svg";
+import NavigateBackStack from "../../HelperComponents/NavigateBack/NavigateBackStack";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useFilterBooks } from "../../CustomHooks/UseFilterBooks";
@@ -42,24 +41,17 @@ const BrowseBooks = () => {
         if (SearchInput !== UpdateSearchInput) {
             setSearchInput(UpdateSearchInput); // Only update if the input has changed
         }
-        console.log(UpdateSearchInput);
     }
-
-    const Navigate = useNavigate();
 
     const Categories = [
         "All", "Adventure", "Autobiography", "Biography", "Business and Economics",
         "Children's Fiction", "Cookbooks", "Crime Fiction", "Drama", "Dystopian",
         "Epistolary", "Fable", "Fairy Tale", "Fantasy", "Graphic Novels", "Health and Wellness",
         "Historical Fiction", "History", "Horror", "Magical Realism", "Memoir",
-        "Mystery", "Philosophy", "Poetry", "Politics", "Religion and Spirituality",
+        "Mystery", "Philosophy", "Poetry", "Politics", "Programming", "Religion and Spirituality",
         "Romance", "Satire", "Science and Nature", "Science Fiction", "Self-Help",
         "Thriller", "Travel", "True Crime", "Urban Fantasy", "Western", "Young Adult"
     ];
-
-    const HandleOnBackPress = () => {
-        Navigate(-1);
-    }
 
     return (
         <React.Fragment>
@@ -71,9 +63,7 @@ const BrowseBooks = () => {
                     :
                     <div className="browse-books">
                         <div className="top">
-                            <button className="back-btn" type="button" onClick={HandleOnBackPress}>
-                                <img src={BackButton} alt="BackButton" />
-                            </button>
+                            <NavigateBackStack />
 
                             <form className="form">
                                 <input

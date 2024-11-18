@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from "react";
 import "./BookDetails.css";
 import MainHeader from "../../HelperComponents/Header/MainHeader";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useFetchBookByID } from "../../CustomHooks/UseFetchBookByID";
 import MainLoader from "../../HelperComponents/Loader/MainLoader";
-import BackButton from "../../Assets/back-button.svg";
+import NavigateBackStack from "../../HelperComponents/NavigateBack/NavigateBackStack";
 
 const BookDetails = () => {
     const Params = useParams();
     const { BookData, Error } = useFetchBookByID(Params.id);
     const [Book, setBook] = useState();
     const [isLoading, setIsLoading] = useState(true);
-
-    const Navigate = useNavigate();
 
     useEffect(() => {
         if (Error) {
@@ -27,17 +25,11 @@ const BookDetails = () => {
         setIsLoading(false);
     }, [BookData, Error]);
 
-    const HandleOnBackPress = () => {
-        Navigate(-1);
-    }
-
     return (
         <React.Fragment>
             <MainHeader style={{ margin: "0 0 5px" }} />
 
-            <button className="back-btn" type="button" onClick={HandleOnBackPress}>
-                <img src={BackButton} alt="BackButton" />
-            </button>
+            <NavigateBackStack />
 
             {
                 isLoading ?
