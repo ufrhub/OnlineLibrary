@@ -1,19 +1,44 @@
 import React, { useEffect, useState } from "react";
 import "./BrowseBooks.css";
 import MainHeader from "../../HelperComponents/Header/MainHeader";
-import { useFetchBooksData } from "../../CustomHooks/UseFetchBooksData";
 import MainLoader from "../../HelperComponents/Loader/MainLoader";
 import BookCard from "../../HelperComponents/Cards/BookCard";
 import { useNavigate } from "react-router-dom";
 import BackButton from "../../Assets/back-button.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { useFilterBooks } from "../../CustomHooks/UseFilterBooks";
 
 const BrowseBooks = () => {
     const [Books, setBooks] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [UpdateSearchInput, setUpdateSearchInput] = useState("");
+    const [SearchInput, setSearchInput] = useState("");
+    const [Category, setCategory] = useState("");
 
-    const { BooksData, Error } = useFetchBooksData();
+    const { FilteredBooks, Error } = useFilterBooks({ searchInput: SearchInput, category: Category });
+
+    useEffect(() => {
+        if (Error) {
+            console.error(Error);
+            return;
+        }
+
+        if (FilteredBooks && FilteredBooks.length > 0) {
+            setBooks(FilteredBooks);
+        } else {
+            setBooks([]);
+        }
+
+        setIsLoading(false);
+    }, [FilteredBooks, Error]);
+
+    const HandleSearch = () => {
+        if (SearchInput !== UpdateSearchInput) {
+            setSearchInput(UpdateSearchInput); // Only update if the input has changed
+        }
+        console.log(UpdateSearchInput);
+    }
 
     const Navigate = useNavigate();
 
@@ -26,18 +51,6 @@ const BrowseBooks = () => {
         "Romance", "Satire", "Science and Nature", "Science Fiction", "Self-Help",
         "Thriller", "Travel", "True Crime", "Urban Fantasy", "Western", "Young Adult"
     ];
-
-    // Render the content
-    useEffect(() => {
-        if (Error) {
-            console.error(Error);
-        }
-
-        if (BooksData.length > 0) {
-            setBooks(BooksData);
-            setIsLoading(false);
-        }
-    }, [BooksData, Error]);
 
     const HandleOnBackPress = () => {
         Navigate(-1);
@@ -58,8 +71,21 @@ const BrowseBooks = () => {
                             </button>
 
                             <form className="form">
-                                <input type="text" name="searchText" placeholder="Type Book Title or Author" />
-                                <button type="button" className="search-btn"><FontAwesomeIcon icon={faSearch} bounce className="faSearch" />Search</button>
+                                <input
+                                    type="text"
+                                    name="searchText"
+                                    value={UpdateSearchInput}
+                                    placeholder="Type Book Title or Author"
+                                    onChange={(event) => setUpdateSearchInput(event.target.value)}
+                                />
+                                <button
+                                    type="button"
+                                    className="search-btn"
+                                    onClick={HandleSearch}
+                                >
+                                    <FontAwesomeIcon icon={faSearch} bounce className="faSearch" />
+                                    Search
+                                </button>
                             </form>
                         </div>
 
@@ -73,10 +99,10 @@ const BrowseBooks = () => {
 
                                     <label>
                                         <span>Select Category:</span>
-                                        <select>
+                                        <select onChange={(e) => setCategory(e.target.value)}>
                                             {
                                                 Categories.map((category, index) => (
-                                                    <option key={index}>{category}</option>
+                                                    <option key={index} value={category !== "All" ? category : ""}>{category}</option>
                                                 ))
                                             }
                                         </select>
