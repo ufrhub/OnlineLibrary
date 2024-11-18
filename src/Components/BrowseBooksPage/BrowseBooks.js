@@ -45,7 +45,7 @@ const BrowseBooks = () => {
 
     return (
         <React.Fragment>
-            <MainHeader style={{ marginTop: "0px" }} />
+            <MainHeader style={{ margin: "0 0 5px" }} />
 
             {
                 isLoading ?

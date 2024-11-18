@@ -2,9 +2,9 @@ import { useCallback, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { FetchBooksFromApi, TransformBookData } from "../Services/BookService";
 
-export const useFetchBooksData = () => {
+export const useFetchBookByID = (BookID) => {
     const BooksState = useSelector((state) => state.BookReducers);
-    const [BooksData, setBooksData] = useState([]);
+    const [BookData, setBookData] = useState();
     const [Error, setError] = useState(null);
 
     const FetchBooksFromRedux = useCallback(async () => {
@@ -34,14 +34,16 @@ export const useFetchBooksData = () => {
                     ).values()
                 );
 
-                setBooksData(CombinedBooks);
+                const FindBook = CombinedBooks.find((Book) => String(Book.id) === String(BookID));
+
+                setBookData(FindBook);
             } catch (error) {
                 setError(error.message || "An error occurred while fetching books");
             }
         };
 
         FetchBooks();
-    }, [FetchBooksFromRedux]);
+    }, [BookID, FetchBooksFromRedux]);
 
-    return { BooksData, Error };
-};
+    return { BookData, Error };
+}

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./BookDetails.css";
 import MainHeader from "../../HelperComponents/Header/MainHeader";
 import { useNavigate, useParams } from "react-router-dom";
-import { useFetchBookByID } from "../../CustomHooks/UseFetchBooksData";
+import { useFetchBookByID } from "../../CustomHooks/UseFetchBookByID";
 import MainLoader from "../../HelperComponents/Loader/MainLoader";
 import BackButton from "../../Assets/back-button.svg";
 
