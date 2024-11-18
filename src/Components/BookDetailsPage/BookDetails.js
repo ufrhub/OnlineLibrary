@@ -31,12 +31,12 @@ const BookDetails = () => {
 
     return (
         <React.Fragment>
-            <MainHeader />
+            <MainHeader style={{ margin: "0 0 5px" }} />
 
             <button className="back-btn" type="button" onClick={HandleOnBackPress}>
                 <img src={BackButton} alt="BackButton" />
             </button>
-            
+
             {
                 isLoading ?
                     <MainLoader />
