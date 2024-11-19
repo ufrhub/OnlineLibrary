@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import "./BrowseBooks.css";
 import MainHeader from "../../HelperComponents/Header/MainHeader";
 import MainLoader from "../../HelperComponents/Loader/MainLoader";
@@ -38,17 +38,17 @@ const BrowseBooks = () => {
         }
     }, [FilteredBooks, Error]);
 
-    const HandleSearch = () => {
+    const HandleSearch = useCallback(() => {
         if (SearchInput !== UpdateSearchInput) {
             setSearchInput(UpdateSearchInput);
         }
-    }
+    }, [SearchInput, UpdateSearchInput]);
 
-    const HandleCategoryChange = (Event) => {
+    const HandleCategoryChange = useCallback((Event) => {
         const { value } = Event.target;
 
         setCategory(value);
-    }
+    }, []);
 
     const Categories = [
         "All", "Adventure", "Autobiography", "Biography", "Business and Economics",

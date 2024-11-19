@@ -28,7 +28,8 @@ const Home = () => {
     return (
         <React.Fragment>
             {
-                isLoading ?
+                isLoading
+                    ?
                     <MainLoader />
                     :
                     <>

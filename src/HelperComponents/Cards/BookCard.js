@@ -1,8 +1,9 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./Card.css";
 import { useNavigate } from "react-router-dom";
 
-const BookCard = ({ Book }) => {
+const BookCard = React.memo(({ Book }) => {
     const Navigate = useNavigate();
 
     const HandleNavigate = () => {
@@ -17,6 +18,29 @@ const BookCard = ({ Book }) => {
             <div className="author">{Book?.author}</div>
         </div>
     );
+});
+
+BookCard.propTypes = {
+    Book: PropTypes.shape(
+        {
+            id: PropTypes.number.isRequired,
+            title: PropTypes.string.isRequired,
+            author: PropTypes.string.isRequired,
+            image: PropTypes.string.isRequired,
+            ratings: PropTypes.oneOfType(
+                [
+                    PropTypes.string,
+                    PropTypes.number
+                ]
+            ).isRequired,
+            price: PropTypes.oneOfType(
+                [
+                    PropTypes.string,
+                    PropTypes.number
+                ]
+            ).isRequired,
+        }
+    ).isRequired
 };
 
 export default BookCard;
