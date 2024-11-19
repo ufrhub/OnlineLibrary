@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import "./AddBook.css";
 import MainHeader from "../../HelperComponents/Header/MainHeader";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -31,40 +31,43 @@ const AddBook = () => {
     const Dispatch = useDispatch();
     const Navigate = useNavigate();
 
-    const HandleInputChange = (e) => {
-        const { name, value } = e.target;
-        setBook({ ...book, [name]: value });
-    };
+    const HandleInputChange = useCallback(({ target: { name, value } }) => {
+        setBook((PreviousBookDetails) => ({ ...PreviousBookDetails, [name]: value }));
+    }, []);
 
-    const HandleFileChange = (event) => {
-        const { name, files } = event.target;
-        const file = files[0];
+    const HandleFileChange = useCallback(({ target: { name, files } }) => {
+        const File = files[0];
 
-        if (file) {
-            const reader = new FileReader();
+        if (File) {
+            if (File.size > 1 * 1024 * 1024) { // Limit to 1MB
+                alert("File size exceeds 1MB");
+                return;
+            }
+
+            const Reader = new FileReader();
 
             // Event Handler for when the file is read successfully
-            reader.onload = (e) => {
-                const arrayBuffer = e.target.result; // ArrayBuffer of the file
-                const buffer = Buffer.from(arrayBuffer).toString('base64'); // Convert to Node.js Buffer
-                const fileData = JSON.stringify({
-                    lastModified: file.lastModified,
-                    lastModifiedDate: file.lastModifiedDate,
-                    name: file.name,
-                    size: file.size,
-                    type: file.type,
-                    buffer
+            Reader.onload = ({ target: { result: ArrayBuffer } }) => {
+                const ConvertedBuffer = Buffer.from(ArrayBuffer).toString("base64");
+                const FileData = JSON.stringify({
+                    lastModified: File.lastModified,
+                    lastModifiedDate: File.lastModifiedDate,
+                    name: File.name,
+                    size: File.size,
+                    type: File.type,
+                    buffer: ConvertedBuffer
                 });
-                setBook({ ...book, [name]: fileData });
+
+                setBook((PreviousBookDetails) => ({ ...PreviousBookDetails, [name]: FileData }));
             };
 
             // Read the file as an ArrayBuffer
-            reader.readAsArrayBuffer(file);
+            Reader.readAsArrayBuffer(File);
         }
-    };
+    }, []);
 
-    const HandleSubmit = (e) => {
-        e.preventDefault();
+    const HandleSubmit = useCallback((Event) => {
+        Event.preventDefault();
 
         // Convert genres from string to an array
         const FormattedBook = {
@@ -81,7 +84,7 @@ const AddBook = () => {
 
         alert('Book details saved to localStorage!');
         Navigate("/");
-    };
+    }, [Dispatch, Navigate, book]);
 
     return (
         <React.Fragment>

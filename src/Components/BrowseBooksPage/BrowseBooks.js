@@ -54,7 +54,7 @@ const BrowseBooks = () => {
         "All", "Adventure", "Autobiography", "Biography", "Business and Economics",
         "Children's Fiction", "Classic", "Cookbooks", "Crime Fiction", "Drama", "Dystopian",
         "Epistolary", "Fable", "Fairy Tale", "Fantasy", "Graphic Novels", "Health and Wellness",
-        "Historical Fiction", "History", "Horror", "Magical Realism", "Memoir",
+        "Historical Fiction", "History", "Horror", "Love Story", "Magical Realism", "Memoir",
         "Mystery", "Philosophy", "Poetry", "Politics", "Programming", "Religion and Spirituality",
         "Romance", "Satire", "Science and Nature", "Science Fiction", "Self-Help",
         "Thriller", "Travel", "True Crime", "Urban Fantasy", "Western", "Young Adult"

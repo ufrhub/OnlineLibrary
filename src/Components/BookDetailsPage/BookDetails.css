@@ -16,7 +16,7 @@
 }
 
 .book-details img {
-    height: auto;
+    height: fit-content;
     width: 70%;
 }
 
